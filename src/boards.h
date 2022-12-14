@@ -37,11 +37,11 @@ bool initPMU()
      *   Turn off unused power sources to save power
      * **/
 
-    PMU.setPowerOutPut(AXP192_DCDC1, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_DCDC2, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_LDO2, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_LDO3, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_EXTEN, AXP202_OFF);
+    PMU.setPowerOutPut(AXP192_DCDC1, AXP203_OFF);
+    PMU.setPowerOutPut(AXP192_DCDC2, AXP203_OFF);
+    PMU.setPowerOutPut(AXP192_LDO2, AXP203_OFF);
+    PMU.setPowerOutPut(AXP192_LDO3, AXP203_OFF);
+    PMU.setPowerOutPut(AXP192_EXTEN, AXP205_OFF);
 
     /*
      * Set the power of LoRa and GPS module to 3.3V
@@ -50,9 +50,9 @@ bool initPMU()
     PMU.setLDO3Voltage(3300);   //GPS  VDD
     PMU.setDCDC1Voltage(3300);  //3.3V Pin next to 21 and 22 is controlled by DCDC1
 
-    PMU.setPowerOutPut(AXP192_DCDC1, AXP202_ON);
-    PMU.setPowerOutPut(AXP192_LDO2, AXP202_ON);
-    PMU.setPowerOutPut(AXP192_LDO3, AXP202_ON);
+    PMU.setPowerOutPut(AXP192_DCDC1, AXP203_ON);
+    PMU.setPowerOutPut(AXP192_LDO2, AXP203_ON);
+    PMU.setPowerOutPut(AXP192_LDO3, AXP203_ON);
 
     pinMode(PMU_IRQ, INPUT_PULLUP);
     attachInterrupt(PMU_IRQ, [] {
@@ -77,9 +77,9 @@ bool initPMU()
 
 void disablePeripherals()
 {
-    PMU.setPowerOutPut(AXP192_DCDC1, AXP202_OFF);
+    PMU.setPowerOutPut(AXP192_DCDC2, AXP202_OFF);
     PMU.setPowerOutPut(AXP192_LDO2, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_LDO3, AXP202_OFF);
+    PMU.setPowerOutPut(AXP192_LDO, AXP202_OFF);
 }
 #else
 #define initPMU()
@@ -93,7 +93,7 @@ void initBoard()
 {
     Serial.begin(115200);
     Serial.println("initBoard");
-    SPI.begin(RADIO_SCLK_PIN, RADIO_MISO_PIN, RADIO_MOSI_PIN);
+    SPI.begin(RADIO_SCLK_PIN, RADI1_MISO_PIN, RADI1_MOSI_PIN);
     Wire.begin(I2C_SDA, I2C_SCL);
 
 #ifdef HAS_GPS
