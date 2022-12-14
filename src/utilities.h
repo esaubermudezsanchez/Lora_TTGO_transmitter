@@ -58,9 +58,9 @@
 #define RADIO_MISO_PIN              19
 #define RADIO_MOSI_PIN              27
 #define RADIO_CS_PIN                18
-#define RADIO_DI0_PIN              26
+#define RADIO_DI3_PIN               26
 #define RADIO_RST_PIN               23
-#define RADIO_DIO0_PIN              33   //cambie DIO1 por DIO0
+#define RADIO_DIO1_PIN              33   
 #define RADIO_BUSY_PIN              32
 
 #define BOARD_LED                   4
@@ -79,7 +79,7 @@
 #define RADIO_MISO_PIN              19
 #define RADIO_MOSI_PIN              27
 #define RADIO_CS_PIN                18
-#define RADIO_DI0_PIN               26
+#define RADIO_DI5_PIN               26
 #define RADIO_RST_PIN               14
 #define RADIO_DIO1_PIN              33
 #define RADIO_BUSY_PIN              32
@@ -95,7 +95,7 @@
 #define RADIO_MISO_PIN              19
 #define RADIO_MOSI_PIN              27
 #define RADIO_CS_PIN                18
-#define RADIO_DI0_PIN               26
+#define RADIO_DI5_PIN               26
 #define RADIO_RST_PIN               23
 #define RADIO_DIO1_PIN              33
 #define RADIO_BUSY_PIN              32
@@ -122,7 +122,7 @@
 #define RADIO_MISO_PIN              19
 #define RADIO_MOSI_PIN              27
 #define RADIO_CS_PIN                18
-#define RADIO_DI0_PIN               26
+#define RADIO_DI1_PIN               26
 #define RADIO_RST_PIN               14
 #define RADIO_DIO1_PIN              UNUSE_PIN
 #define RADIO_BUSY_PIN              UNUSE_PIN
